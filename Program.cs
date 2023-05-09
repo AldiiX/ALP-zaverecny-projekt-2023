@@ -62,7 +62,6 @@
 
                 AnsiConsole.Write(panel);
             }
-
             public static void RoundResult(string result, Player player, Player botplayer, Game game) {
                 Console.Clear();
                 AnsiConsole.Write(new FigletText($"{game.Round}. kolo").LeftJustified().Color(Color.Yellow1));
@@ -86,7 +85,6 @@
                 DisplayScore(player, botplayer);
                 Console.ReadKey();
             }
-
             public static void DisplayScore(Player player, Player botplayer, string title = "") {
                 var table = new Table();
 
@@ -99,7 +97,6 @@
 
                 AnsiConsole.Write(table);
             }
-
             public static string GenerateBotsUsername() {
                 Random r = new Random();
                 int rng = 0;
@@ -119,7 +116,6 @@
 
                 return name;
             }
-
             public static void FinalResult(Player player, Player botplayer) {
                 Console.Clear();
                 AnsiConsole.Write(new FigletText($"KONEC HRY").LeftJustified().Color(Color.Orange1));
@@ -132,7 +128,6 @@
 
                 DisplayScore(player, botplayer, winner != null ? $"\n[yellow][underline]{winner}[/] vyhrál celou hru![/]" : "[yellow][underline]Remíza[/] - oba hráči mají stejné skóre.[/]");
             }
-
             public static void SelectionTimeout() {
                 var waitHandle = new ManualResetEvent(false);
                 Func<Task> task = async () => {
@@ -157,15 +152,21 @@
 
             Random random = new();
             string[] objects = { "Kámen", "Nůžky", "Papír" };
-            string playerName = AnsiConsole.Prompt(
-                new TextPrompt<string>("Zadej tvůj [blue]username[/]:\n[gray35]-     [/]")
-                    .Validate(input => {
-                        if (input.Length > 16) {
-                            return ValidationResult.Error("[red][invert]\nTvůj username musí být dlouhý maximálně 16 znaků.\n[/][/]");
-                        }
-                        return ValidationResult.Success();
-                    })
-            );
+
+
+
+            // program se zeptá a přezdívku uživatele; přezdívka může mít maximálně 16 znaků
+                string playerName = AnsiConsole.Prompt(
+                    new TextPrompt<string>("Zadej tvůj [blue]username[/]:\n[gray35]-     [/]")
+                        .Validate(input => {
+                            if (input.Length > 16) {
+                                return ValidationResult.Error("[red][invert]\nTvůj username musí být dlouhý maximálně 16 znaků.\n[/][/]");
+                            }
+                            return ValidationResult.Success();
+                        })
+                );
+            //
+
 
 
             // loop, dokud uživatel neřekne, že chce skončit hru
@@ -181,7 +182,8 @@
                 // loop - nová kola, dokud někdo nevyhraje
                 while (true) {
 
-                    if (player.Wins >= 5 || botplayer.Wins >= 5) break; // pokud někdo dosáhne 5 výher, tak končí hra
+                    // pokud někdo dosáhne 5 výher, tak končí hra
+                    if (player.Wins >= 5 || botplayer.Wins >= 5) break; 
 
 
 
@@ -192,17 +194,18 @@
 
 
                     // uživatel vybere nástroj (kámen, nůžky, papír)
-                    string selectedObjectName = AnsiConsole.Prompt(
-                        new SelectionPrompt<string>()
-                        .Title("")
-                        .PageSize(15)
-                        .AddChoices(objects)
-                    );
+                        string selectedObjectName = AnsiConsole.Prompt(
+                            new SelectionPrompt<string>()
+                            .Title("")
+                            .PageSize(15)
+                            .AddChoices(objects)
+                        );
                     //
 
 
 
-                    Game.SelectionTimeout(); // -> odpočítávání do vyhodnocení kola
+                    // odpočítávání do vyhodnocení kola
+                    Game.SelectionTimeout();
 
 
 
@@ -214,27 +217,27 @@
 
                     // vyhodnocení kola
 
-                    // pokud je remíza
-                    if (player.SelectedObject.Name == botplayer.SelectedObject.Name) {
-                        Game.RoundResult("draw", player, botplayer, game);
-                        continue;
-                    }
+                        // pokud je remíza
+                        if (player.SelectedObject.Name == botplayer.SelectedObject.Name) {
+                            Game.RoundResult("draw", player, botplayer, game);
+                            continue;
+                        }
 
 
 
-                    // pokud hráč vyhraje
-                    if (player.SelectedObject.Destroys == botplayer.SelectedObject.Name) {
-                        Game.RoundResult("win", player, botplayer, game);
-                        continue;
-                    }
+                        // pokud hráč vyhraje
+                        if (player.SelectedObject.Destroys == botplayer.SelectedObject.Name) {
+                            Game.RoundResult("win", player, botplayer, game);
+                            continue;
+                        }
 
 
 
-                    // pokud hráč prohraje
-                    if (player.SelectedObject.Name == botplayer.SelectedObject.Destroys) {
-                        Game.RoundResult("loose", player, botplayer, game);
-                        continue;
-                    }
+                        // pokud hráč prohraje
+                        if (player.SelectedObject.Name == botplayer.SelectedObject.Destroys) {
+                            Game.RoundResult("loose", player, botplayer, game);
+                            continue;
+                        }
                     //
                 }
 
