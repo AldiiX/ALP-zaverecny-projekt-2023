@@ -16,3 +16,9 @@ Hráč začíná tím, že zadá svoji volbu - kámen, nůžky nebo papír. Pot�
 • Papír porazí kámen
 
 Hra se hraje na 3 vítězství.
+
+
+## Instalace
+
+Stáhni si soubor `ALP závěrečný projekt 2023.zip`, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
+
