@@ -62,6 +62,18 @@
 
                 AnsiConsole.Write(panel);
             }
+            private static void DisplayScore(Player player, Player botplayer, string title = "") {
+                var table = new Table();
+
+                table.AddColumn("[gray]Hráč[/]");
+                table.AddColumn(new TableColumn("[gray]Skóre[/]").Centered());
+
+                table.AddRow($"[blue]{player.Name}[/]", player.Wins.ToString());
+                table.AddRow($"[blue]{botplayer.Name}[/]", botplayer.Wins.ToString());
+                if (title != null) table.Title(title);
+
+                AnsiConsole.Write(table);
+            }
             public static void RoundResult(string result, Player player, Player botplayer, Game game) {
                 Console.Clear();
                 AnsiConsole.Write(new FigletText($"{game.Round}. kolo").LeftJustified().Color(Color.Yellow1));
@@ -84,18 +96,6 @@
 
                 DisplayScore(player, botplayer);
                 Console.ReadKey();
-            }
-            public static void DisplayScore(Player player, Player botplayer, string title = "") {
-                var table = new Table();
-
-                table.AddColumn("[gray]Hráč[/]");
-                table.AddColumn(new TableColumn("[gray]Skóre[/]").Centered());
-
-                table.AddRow($"[blue]{player.Name}[/]", player.Wins.ToString());
-                table.AddRow($"[blue]{botplayer.Name}[/]", botplayer.Wins.ToString());
-                if (title != null) table.Title(title);
-
-                AnsiConsole.Write(table);
             }
             public static string GenerateBotsUsername() {
                 Random r = new Random();
