@@ -1,7 +1,7 @@
 
 # ALP - Závěrečný projekt 2023
 
-Toto je konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v klasické hře.
+Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v klasické hře.
 
 
 
