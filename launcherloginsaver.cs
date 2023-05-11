@@ -1,6 +1,7 @@
 ﻿class LauncherLoginSaver {
 
     private static class Program {
+
         public static string[] Platforms { get; } = { "Steam", "Discord", "Spotify", "XBOX", "Riot", "BattleNet", "Epic Games"};
         public static string[] Options { get; } = { "1. Přidat / změnit launcher login", "2. Odstranit launcher login", "3. Vypsat launcher login podle názvu", "4. Vypsat všechny launcher loginy", "[red]5. UKONČIT[/]" };
 
@@ -16,8 +17,10 @@
                 .AddChoices("[red]ZPĚT[/]")
             );
 
+            string selectedLauncherId = selectedLauncherName.ToLower().Replace(' ', '_');
 
             if (selectedLauncherName == "[red]ZPĚT[/]") return;
+
 
 
             string name = AnsiConsole.Prompt(
@@ -45,7 +48,7 @@
 
 
 
-            File.WriteAllText($"{selectedLauncherName.ToLower().Replace(' ', '_')}.txt", $"{name};{password}");
+            File.WriteAllText($"{selectedLauncherId}.txt", $"{name};{password}");
 
 
 
@@ -75,7 +78,7 @@
             }
 
             char input = AnsiConsole.Prompt(
-                new TextPrompt<char>($"[blue]Opravdu chceš smazat data z platformy [underline]{selectedLauncherName}[/]? [grey62](y/n)[/]:   [/]")
+                new TextPrompt<char>($"[yellow1]Opravdu chceš smazat data z platformy [underline]{selectedLauncherName}[/]? [grey62](y/n)[/]:   [/]")
                     .ValidationErrorMessage("[red][invert]\nŠpatný input, zadej y/n\n[/][/]")
                     .Validate(input => {
                         if (!char.IsLetter(input)) {
@@ -165,7 +168,7 @@
 
 
 
-    public static void Main() {
+    public static void Main() { 
         while (true) {
             Console.Clear();
 
