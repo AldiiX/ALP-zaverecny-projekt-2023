@@ -2,5 +2,5 @@
 global using Spectre.Console;
 
 
-
-FinalProject.RockPapersScissors.Main();
+RockPaperScissors.Main();
+//LauncherLoginSaver.Main();
