@@ -32,5 +32,4 @@ Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na růz
 
 ## Instalace
 
-Stáhni si soubor `ALP závěrečný projekt 2023.zip`, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
-
+Stáhni si soubor `Installer.zip`, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
