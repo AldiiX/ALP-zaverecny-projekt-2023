@@ -39,9 +39,6 @@
                 new TextPrompt<string>("Zadej tvoje [blue]heslo[/]:\n[gray35]-     [/]")
                     .Secret('*')
                     .Validate(input => {
-                        /*if (input.Length > 16) {
-                            return ValidationResult.Error("[red][invert]\nTvůj username musí být dlouhý maximálně 16 znaků.\n[/][/]");
-                        }*/
                         return ValidationResult.Success();
                     })
             );
@@ -119,7 +116,7 @@
 
             if(!File.Exists(launcherCompiledName + ".txt")) {
                 Console.Clear();
-                AnsiConsole.Markup($"[red]{selectedLauncherName} nemá uložené žádné přihlašovací údaje.[/]");
+                AnsiConsole.Markup($"[red][invert]{selectedLauncherName} nemá uložené žádné přihlašovací údaje.[/][/]");
                 Console.ReadKey();
                 
                 return;
