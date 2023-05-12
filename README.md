@@ -1,6 +1,6 @@
 # **ALP - Závěrečný projekt 2023**
 
-Závěrečné projekty, které jsem dělal. Při spuštění aplikace se tě program zeptá, jaké z těch projektů chceš spustit.\
+Závěrečné projekty, které jsem dělal. Při spuštění aplikace se tě program zeptá, jaké z těch projektů chceš spustit.
 
 
 
@@ -16,7 +16,7 @@ Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v 
 • Nůžky porazí papír\
 • Papír porazí kámen
 
-Hra se hraje na *3* vítězství.\
+Hra se hraje na *3* vítězství.
 
 
 
@@ -24,7 +24,7 @@ Hra se hraje na *3* vítězství.\
 
 ## Launcher Login Saver
 
-Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na různé platformy/launchery.\
+Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na různé platformy/launchery.
 
 
 
