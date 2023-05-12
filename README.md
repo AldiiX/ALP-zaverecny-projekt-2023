@@ -7,7 +7,9 @@ Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v 
 
 
 
-## Jak hrát?
+## Rock, Paper, Scissors Game
+
+### Jak hrát?
 
 Hráč začíná tím, že zadá svoji volbu - kámen, nůžky nebo papír. Poté se náhodně vygeneruje volba počítače a rozhodne se, kdo z vás vyhrál.
 
@@ -16,6 +18,19 @@ Hráč začíná tím, že zadá svoji volbu - kámen, nůžky nebo papír. Pot�
 • Papír porazí kámen
 
 Hra se hraje na 3 vítězství.
+
+
+
+
+
+## Launcher Login Saver
+
+### Info
+
+Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na různé platformy/launchery.
+
+
+
 
 
 ## Instalace
