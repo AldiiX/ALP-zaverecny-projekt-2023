@@ -1,7 +1,6 @@
-
 # ALP - Závěrečný projekt 2023
 
-Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v klasické hře.
+Závěrečné projekty, které jsem dělal. Při spuštění aplikace se tě program zeptá, jaké z těch projektů chceš spustit.
 
 
 
@@ -11,7 +10,7 @@ Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v 
 
 ### Jak hrát?
 
-Hráč začíná tím, že zadá svoji volbu - kámen, nůžky nebo papír. Poté se náhodně vygeneruje volba počítače a rozhodne se, kdo z vás vyhrál.
+Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v klasické hře. Hráč začíná tím, že zadá svoji volbu - kámen, nůžky nebo papír. Poté se náhodně vygeneruje volba počítače a rozhodne se, kdo z vás vyhrál.
 
 • Kámen porazí nůžky\
 • Nůžky porazí papír\
@@ -24,8 +23,6 @@ Hra se hraje na 3 vítězství.
 
 
 ## Launcher Login Saver
-
-### Info
 
 Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na různé platformy/launchery.
 
