@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-class BankCalculator {
+﻿class BankCalculator {
 
     private static class Program {
 
@@ -30,16 +28,16 @@ class BankCalculator {
                 .AddChoices(periodStrings)
             ));
 
-            int period = periodIndex switch {
-                0 => 5,
-                1 => 10,
-                2 => 15,
-                _ => 1
+            int periodInMonths = periodIndex switch {
+                0 => 5 * 12,
+                1 => 10 * 12,
+                2 => 15 * 12,
+                _ => 1 * 12
             };
 
-            double rate = GetRate();
-            double monthlyRepayment = deposit * (rate / 100 / 12) * Math.Pow(1 + (rate / 100 / 12), period) / (Math.Pow(1 + (rate / 100 / 12), period) - 1);
-            double totalPayment = (monthlyRepayment * period) + deposit;
+            double monthlyRate = (GetRate() / 100) / 12;
+            double monthlyRepayment = Math.Round((deposit * monthlyRate) / (1 - Math.Pow(1 + monthlyRate, -periodInMonths)), 2);
+            double totalPayment = Math.Round(monthlyRepayment * periodInMonths, 2);
             Console.WriteLine(monthlyRepayment);
             Console.WriteLine(totalPayment);
             Console.ReadKey();
