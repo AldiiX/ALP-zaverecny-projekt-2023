@@ -16,7 +16,7 @@ Konzolová hra Kámen nůžky papír, kde hráč soutěží proti počítači v 
 • Nůžky porazí papír\
 • Papír porazí kámen
 
-Hra se hraje na *3* vítězství.
+Hra se hraje na *5* vítězství.
 
 
 
