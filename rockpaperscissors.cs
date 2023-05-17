@@ -241,6 +241,7 @@
             }
 
 
+
             // v případě, že skončil loop (někdo vyhrál)
             Game.FinalResult(player, botplayer);
             char cont = char.ToLower(AnsiConsole.Ask<char>("[orange1]\n\nChceš začít novou hru? (y/n):  [/]"));
