@@ -16,11 +16,11 @@ Po spuštění aplikace se zobrazí jednoduché menu, ve kterém si uživatel vy
 
 #### Info
 
-- Uživatel může vybrat jednu z možností: kámen, nůžky nebo papír.\
-- Počítač náhodně vygeneruje svoji volbu.\
-- Vyhodnotí se, kdo vyhrál dané kolo na základě pravidel hry: kámen poráží nůžky, nůžky poráží papír, papír poráží kámen.\
-- Výsledek každého kola se zobrazí uživateli.\
-- Počítá se celkový počet vítězství pro uživatele a počítač.\
+- Uživatel může vybrat jednu z možností: kámen, nůžky nebo papír.
+- Počítač náhodně vygeneruje svoji volbu.
+- Vyhodnotí se, kdo vyhrál dané kolo na základě pravidel hry: kámen poráží nůžky, nůžky poráží papír, papír poráží kámen.
+- Výsledek každého kola se zobrazí uživateli.
+- Počítá se celkový počet vítězství pro uživatele a počítač.
 - Hra končí, když někdo dosáhne 5 vítězství.
 
 
