@@ -10,7 +10,7 @@ string selectedProject = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
     .Title("Vyber projekt, který se spustí")
     .PageSize(15)
-    .AddChoices("Rock, Paper, Scissors Game", "Launcher Login Saver", "Bankovní Kalkulačka")
+    .AddChoices("Rock, Paper, Scissors Game", "Launcher Login Saver", "Bankovní Kalkulačka", "Interaktivní Kalendář")
 );
 
 switch(selectedProject) {
@@ -25,5 +25,9 @@ switch(selectedProject) {
     case "Bankovní Kalkulačka": {
             Console.Clear();
             BankCalculator.Main();
+    } break;
+    case "Interaktivní Kalendář": {
+            Console.Clear();
+            InteractiveCalendar.Main();
     } break;
 }

@@ -1,8 +1,8 @@
 ﻿// Tohle je jen joke namespace
 
 namespace JK {
-    public static class Jáchym {
-        public static void Klír() {
+    public static class Jachym {
+        public static void Klir() {
             Console.Clear();
         }
     }

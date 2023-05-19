@@ -14,7 +14,7 @@ class BankCalculator {
 
         /// <returns>Vklad</returns>
         public static double GetDeposit() {
-            Jáchym.Klír();
+            Jachym.Klir();
             double deposit = AnsiConsole.Prompt(
                 new TextPrompt<double>("Zadej [blue]počáteční vklad[/]: ")
                 .Validate(input => {
@@ -126,7 +126,7 @@ class BankCalculator {
         table.AddRow("[yellow1]Celkový úrok[/]".ToUpper(), $"[yellow]{totalRepayment} Kč[/]");
         table.AddRow("[yellow1]Celková platba[/]".ToUpper(), $"[yellow]{totalPayment} Kč[/]");
 
-        Jáchym.Klír();
+        Jachym.Klir();
         Console.WriteLine("\n");
         AnsiConsole.Write(table);
         Console.ReadKey();
@@ -168,7 +168,7 @@ class BankCalculator {
         table.AddRow("[yellow1]Celkový úrok[/]".ToUpper(), $"[yellow]{totalRepayment} Kč[/]");
         table.AddRow("[yellow1]Celková platba[/]".ToUpper(), $"[yellow]{finalAmount} Kč[/]");
 
-        Jáchym.Klír();
+        Jachym.Klir();
         Console.WriteLine("\n");
         AnsiConsole.Write(table);
         Console.ReadKey();
@@ -179,16 +179,15 @@ class BankCalculator {
     public static void Main() {
         while (true) {
             
-            Jáchym.Klír();
+            Jachym.Klir();
 
             AnsiConsole.Write(new FigletText($"ČSOB").LeftJustified().Color(Color.Blue));
-            AnsiConsole.Write("\nVítej v bankovní kalkulačce!\n\n\n");
+            AnsiConsole.Write("\nVítej v bankovní kalkulačce! Vyber si, co budeš počítat.\n\n");
             
 
 
             string type = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                .Title("Vyber si, co budeš počítat.")
                 .AddChoices(new string[] {"Splátky", "Spoření"})
             );
 
