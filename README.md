@@ -88,4 +88,6 @@ Tato aplikace je interaktivní kalendář, který umožňuje uživatelům zobraz
 
 ### Instalace
 
-Stáhni si soubor `Installer.zip`, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
+Stáhni si soubor `Installer.zip` přes odkaz níže, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
+
+### [__**STÁHNOUT**__](https://github.com/AldiiX/ALP-zaverecny-projekt-2023/blob/main/Installer.zip?raw=true)
