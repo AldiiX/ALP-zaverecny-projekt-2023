@@ -75,9 +75,9 @@ Tato aplikace je interaktivní kalendář, který umožňuje uživatelům zobraz
 
 #### Funkce
 
-- Zobrazování kalendáře aktuálního měsíce: Aplikace umožňuje uživatelům zobrazit kalendář aktuálního měsíce s možností zvýraznění uložených událostí.\
-- Zobrazování uložených událostí: Uživatelé mohou procházet seznam uložených událostí a zobrazit podrobnosti o každé události v kalendáři.\
-- Přidávání událostí: Uživatelé mohou přidávat nové události do kalendáře zadáním data události.\
+- Zobrazování kalendáře aktuálního měsíce: Aplikace umožňuje uživatelům zobrazit kalendář aktuálního měsíce s možností zvýraznění uložených událostí.
+- Zobrazování uložených událostí: Uživatelé mohou procházet seznam uložených událostí a zobrazit podrobnosti o každé události v kalendáři.
+- Přidávání událostí: Uživatelé mohou přidávat nové události do kalendáře zadáním data události.
 - Mazání událostí: Uživatelé mají možnost odstranit existující události z kalendáře.
 
 
