@@ -8,7 +8,7 @@ Závěrečné projekty, které jsem dělal. Při spuštění aplikace se tě pro
 
 
 
-### Rock, Paper, Scissors Game
+### **Rock, Paper, Scissors Game**
 
 #### Jak hrát?
 
@@ -29,7 +29,7 @@ Po spuštění aplikace se zobrazí jednoduché menu, ve kterém si uživatel vy
 
 
 
-### Launcher Login Saver
+### **Launcher Login Saver**
 
 Tato aplikace ti může jednoduše spravovat tvé přihlašovací údaje na různé platformy/launchery.
 
@@ -49,7 +49,7 @@ Máš na výběr 5 možností, jak s Launcher Login Saverem pracovat:
 
 
 
-### Bankovní Kalkulačka
+### **Bankovní Kalkulačka**
 
 Tato aplikace slouží jako bankovní kalkulačka. Umožňuje vypočítat spoření a splátky v závislosti na zadaných parametrech.
 
@@ -69,7 +69,7 @@ Dále můžete využít funkci pro výpočet měsíčních splátek. Stačí zad
 
 
 
-### Interaktivní Kalendář
+### **Interaktivní Kalendář**
 
 Tato aplikace je interaktivní kalendář, který umožňuje uživatelům zobrazovat a měnit události v rámci kalendáře.
 
@@ -86,7 +86,7 @@ Tato aplikace je interaktivní kalendář, který umožňuje uživatelům zobraz
 
 
 
-### Instalace
+### **Instalace**
 
 Stáhni si soubor `Installer.zip` přes odkaz níže, ten potom extrahuj a v extrahované složce spusť soubor `setup.exe`. Následně pak hru kdykoliv budeš moct spustit přes `*.application` soubor.
 
