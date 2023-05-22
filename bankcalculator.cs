@@ -166,7 +166,7 @@ class BankCalculator {
         table.AddRow("[blue]Úroková sazba[/]", $"{Utils.RateInPercents} %");
         table.AddRow("[blue]Měsíční vklad[/]", $"{monthlyDeposit} Kč");
         table.AddRow("[yellow1]Celkový úrok[/]".ToUpper(), $"[yellow]{totalRepayment} Kč[/]");
-        table.AddRow("[yellow1]Celková platba[/]".ToUpper(), $"[yellow]{finalAmount} Kč[/]");
+        table.AddRow("[yellow1]Celkový výdělek[/]".ToUpper(), $"[yellow]{finalAmount} Kč[/]");
 
         Jachym.Klir();
         Console.WriteLine("\n");
