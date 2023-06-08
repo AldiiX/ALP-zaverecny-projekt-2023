@@ -23,7 +23,10 @@ class InteractiveCalendar {
         private static List<Event> Events { get; } = new();
 
         public static void AddEvent() {
+
             Jachym.Klir();
+
+
 
             string name = AnsiConsole.Prompt(
                 new TextPrompt<string>("Zadej [blue]jméno[/] přidávané události: ")
@@ -35,6 +38,8 @@ class InteractiveCalendar {
                 })
                 .ValidationErrorMessage($"[red][invert]\nZadej prosím jméno události.\n[/][/]")
             );
+
+
 
             short year = AnsiConsole.Prompt(
                 new TextPrompt<short>("Zadej [blue]rok[/] přidávané události: ")
@@ -48,6 +53,8 @@ class InteractiveCalendar {
                 .ValidationErrorMessage($"[red][invert]\nZadej prosím číslo.\n[/][/]")
             );
 
+
+
             byte month = AnsiConsole.Prompt(
                 new TextPrompt<byte>("Zadej [blue]měsíc[/] přidávané události: ")
                 .Validate(input => {
@@ -58,6 +65,8 @@ class InteractiveCalendar {
                 })
                 .ValidationErrorMessage($"[red][invert]\nZadej prosím číslo.\n[/][/]")
             );
+
+
 
             byte day = AnsiConsole.Prompt(
                 new TextPrompt<byte>("Zadej [blue]den[/] přidávané události: ")
@@ -72,6 +81,8 @@ class InteractiveCalendar {
                 .ValidationErrorMessage($"[red][invert]\nZadej prosím číslo.\n[/][/]")
             );
 
+
+
             Events.Add(new Event(day,month,year,name));
         }
         
@@ -79,9 +90,10 @@ class InteractiveCalendar {
 
             Jachym.Klir();
             Console.WriteLine();
-            
             var eventsList = new List<string>();
             foreach (Event e in Events) eventsList.Add($"{e.Name} ({e.Day}.{e.Month}.{e.Year})");
+
+
 
             if (Events.Count == 0) {
 
@@ -92,12 +104,16 @@ class InteractiveCalendar {
                 return;
             }
 
+
+
             var selectedEventIndex = eventsList.IndexOf(AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                     .Title("Vyber událost ke [underline]smazání[/]:")
                     .AddChoices(eventsList)
                     .AddChoices("[red]ZPĚT[/]")
             ));
+
+
 
             if (selectedEventIndex < 0) return;
 
@@ -141,6 +157,7 @@ class InteractiveCalendar {
         }
 
         public static void ShowCalendar(byte month, short year) {
+
             Jachym.Klir();
 
 
@@ -150,6 +167,7 @@ class InteractiveCalendar {
             .MinimalHeavyHeadBorder()
             .BorderColor(Color.Grey35)
             .HeaderStyle(Style.Parse("blue bold"));
+
 
 
             if(Events.Count > 0) {
@@ -177,6 +195,8 @@ class InteractiveCalendar {
         rule.Style = Style.Parse("red dim");
         AnsiConsole.Write(rule);
         Console.ReadKey();
+
+
 
         while (looping) {
 
