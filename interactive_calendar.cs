@@ -4,12 +4,14 @@ class InteractiveCalendar {
 
     private class Event {
 
-        public Event(byte date, byte month, short year) {
+        public Event(byte date, byte month, short year, string name) {
             Day = date;
             Month = month;
             Year = year;
+            Name = name;
         }
 
+        public string Name { get; set; }
         public byte Day { get; set; }
         public byte Month { get; set; }
         public short Year { get; set; }
@@ -22,6 +24,17 @@ class InteractiveCalendar {
 
         public static void AddEvent() {
             Jachym.Klir();
+
+            string name = AnsiConsole.Prompt(
+                new TextPrompt<string>("Zadej [blue]jméno[/] přidávané události: ")
+                .Validate(input => {
+
+                    if (input.Length > 30) return ValidationResult.Error($"[red][invert]\nJméno musí mít maximálně 30 znaků.\n[/][/]");
+
+                    return ValidationResult.Success();
+                })
+                .ValidationErrorMessage($"[red][invert]\nZadej prosím jméno události.\n[/][/]")
+            );
 
             short year = AnsiConsole.Prompt(
                 new TextPrompt<short>("Zadej [blue]rok[/] přidávané události: ")
@@ -59,7 +72,7 @@ class InteractiveCalendar {
                 .ValidationErrorMessage($"[red][invert]\nZadej prosím číslo.\n[/][/]")
             );
 
-            Events.Add(new Event(day,month,year));
+            Events.Add(new Event(day,month,year,name));
         }
         
         public static void RemoveEvent() {
@@ -68,7 +81,7 @@ class InteractiveCalendar {
             Console.WriteLine();
             
             var eventsList = new List<string>();
-            foreach (Event e in Events) eventsList.Add($"{e.Day}. {e.Month}. {e.Year}");
+            foreach (Event e in Events) eventsList.Add($"{e.Name} ({e.Day}.{e.Month}.{e.Year})");
 
             if (Events.Count == 0) {
 
@@ -94,7 +107,7 @@ class InteractiveCalendar {
         public static void ShowEvents() { 
 
             var eventsList = new List<string>();
-            foreach (Event e in Events) eventsList.Add($"{e.Day}. {e.Month}. {e.Year}");
+            foreach (Event e in Events) eventsList.Add($"{e.Name} ({e.Day}.{e.Month}.{e.Year})");
 
 
 
@@ -123,11 +136,11 @@ class InteractiveCalendar {
                 if (selectedEventIndex < 0) break;
 
                 Event ev = Events[selectedEventIndex];
-                ShowCalendar(ev.Month, ev.Year, ev);
+                ShowCalendar(ev.Month, ev.Year);
             }
         }
 
-        public static void ShowCalendar(byte month, short year, Event? e = null) {
+        public static void ShowCalendar(byte month, short year) {
             Jachym.Klir();
 
 
@@ -139,10 +152,11 @@ class InteractiveCalendar {
             .HeaderStyle(Style.Parse("blue bold"));
 
 
-            if (e != null) {
-                calendar.AddCalendarEvent(e.Year, e.Month, e.Day);
+            if(Events.Count > 0) {
+                foreach(var e in Events) calendar.AddCalendarEvent(e.Year, e.Month, e.Day);
                 calendar.HighlightStyle(Style.Parse("yellow1 bold"));
             }
+
 
 
             AnsiConsole.Write(calendar);
